@@ -71,6 +71,12 @@ public class Swing{
 		});
 
 
+		WindowListener listener = new WindowAdapter(){
+            public void windowClosing(WindowEvent winEvt){
+                System.exit(0);
+            }
+        };
+
 		frame.setLayout(null);
 		frame.setSize(400,600);
 		frame.add(textField);
@@ -79,6 +85,7 @@ public class Swing{
 		frame.add(clearButton);
 		frame.add(scroll);
 		frame.setVisible(true);
+		frame.addWindowListener(listener);
 	}
 
 	public static long factorial(int n) {
