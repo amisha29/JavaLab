@@ -1,7 +1,7 @@
 import java.util.*;
 import java.text.SimpleDateFormat;
 
-public class IncomingCall{
+class IncomingCall{
 
     String number, name, timestamp;
 
@@ -34,7 +34,7 @@ public class IncomingCall{
     }
 }
 
-public class CallHistory{
+class CallHistory{
 
     ArrayList<IncomingCall> callList;
 
