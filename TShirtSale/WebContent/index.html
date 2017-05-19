@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>TShirt Sale</title>
+</head>
+<body>
+	<form action="BuyTshirtservlet" method="get"> 
+		<fieldset>
+			<legend>Buy T-shirt</legend>
+				<label>T-shirt Accessories: Belt <input type="checkbox" name="accessories" value="belt"/>
+				Cap <input type="checkbox" name="accessories" value="cap"/>
+				Band <input type="checkbox" name="accessories" value="band"/>
+				</label> <br/>
+				
+				<label>Tag line : <input type="text" name="tagline"></label><br/>
+				<label>Chest pockets Yes <input type="radio" name="chestPocket" value="1"/> No <input type="radio" name="chestPocket" value="0"/> </label><br/>
+				<label> Color <select name="color">
+					<option value="red">Red</option>
+					<option value="black">black</option>
+					<option value="blue">blue</option>
+				</select>
+				 </label><br/>
+				<input type="submit" value="click me"> 
+		</fieldset>
+	</form>
+
+</body>
+</html>
