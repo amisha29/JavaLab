@@ -125,14 +125,12 @@ public class MasterClass
     public void displayContents(String dest){
         try {
         	 BufferedReader br = new BufferedReader(new FileReader(dest));
-        	 StringBuilder sb = new StringBuilder();
             String line;
             while ((line = br.readLine()) != null)
             {
-          	  sb.append(line + "\n");
+            	 textArea.append(line+"\n");
             }
-//          String content = new Scanner(new File(dest)).useDelimiter("\\Z").next();
-          textArea.setText(sb.toString());
+
         }
         catch(Exception e){
           e.printStackTrace();
