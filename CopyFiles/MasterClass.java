@@ -101,15 +101,20 @@ public class MasterClass
 
     public void copyFiles(String src, String dest) {
       try {
-        InputStream in = new FileInputStream(new File(src));
-        OutputStream out = new FileOutputStream(new File(dest));
-        byte[] buf = new byte[1024];
-        int len;
+    	  
+    	  FileReader fr=new FileReader(src);
+    	  FileWriter fw=new FileWriter(dest);
+    	  BufferedReader br = new BufferedReader(fr);
+    	  BufferedWriter bw = new BufferedWriter(fw);
+          
+          String line;
+          while ((line = br.readLine()) != null)
+          {
+        	  bw.write(line + "\n");
+          }
+          fr.close();
+          bw.close();
 
-        while ((len = in.read(buf)) > 0)
-          out.write(buf, 0, len);
-
-        in.close();
       }
       catch (Exception e)
       {
@@ -119,8 +124,15 @@ public class MasterClass
 
     public void displayContents(String dest){
         try {
-          String content = new Scanner(new File(dest)).useDelimiter("\\Z").next();
-          textArea.setText(content);
+        	 BufferedReader br = new BufferedReader(new FileReader(dest));
+        	 StringBuilder sb = new StringBuilder();
+            String line;
+            while ((line = br.readLine()) != null)
+            {
+          	  sb.append(line + "\n");
+            }
+//          String content = new Scanner(new File(dest)).useDelimiter("\\Z").next();
+          textArea.setText(sb.toString());
         }
         catch(Exception e){
           e.printStackTrace();
